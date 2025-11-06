@@ -61,7 +61,7 @@ export default {
 			return new Response('Expected upgrade to websocket', { status: 426 });
 		}
 
-		const id = env.VEET.idFromName(new URL(request.url).pathname);
+		const id = env.VEET.idFromName(new URL(request.url).pathname.slice(1));
 
 		const veet = env.VEET.get(id);
 
